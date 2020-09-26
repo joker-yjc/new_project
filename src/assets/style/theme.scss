@@ -1,0 +1,44 @@
+// 用于覆盖ant-design-vue默认样式
+@import './var.scss';
+.ant-table {
+  // border: 1px $color-gray solid;
+  border-radius: 4px;
+  overflow: hidden;
+  thead {
+    tr {
+      th {
+        background-color: #fafafa;
+        color: #000;
+      }
+    }
+  }
+  tbody {
+    > tr {
+      border: none;
+      td {
+        border: none;
+      }
+      &:nth-child(even) {
+        background-color: #fafafa;
+      }
+      &:nth-child(odd) {
+        background-color: #fff;
+      }
+      td {
+        border-color: $color-gray;
+      }
+    }
+  }
+}
+
+.ant-btn {
+  &.round-rect {
+    // 圆角矩形按钮
+    border-radius: 32px;
+  }
+}
+
+// 分页器居中
+.ant-pagination {
+  text-align: center;
+}

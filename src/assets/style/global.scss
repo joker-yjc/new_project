@@ -1,0 +1,304 @@
+@import './var.scss';
+
+/**
+  * @description 公共样式
+  * @author simon@sayto.top
+  * 包含样式重置（css reset）和 全局分离样式（separate style）
+ */
+
+// use in this file only
+$paging-height-int: 55;
+$breadcrumb-height: 50px; // 面包屑高度
+$filer-height: 80px; // 筛选器高度
+$paging-height: $paging-height-int + 0px; // 分页器高度
+
+:export {
+  pagingHeight: $paging-height-int;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+/* 分离样式 */
+/* display */
+.dn {
+  display: none;
+}
+.di {
+  display: inline;
+}
+.db {
+  display: block;
+}
+.dib {
+  display: inline-block;
+}
+/* box-sizing */
+.bsb {
+  box-sizing: border-box;
+}
+/* 浮动 */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 宽度百分比 */
+.wp100 {
+  width: 100%;
+}
+/* position */
+.por {
+  position: relative;
+}
+.poa {
+  position: absolute;
+}
+/* text-align */
+.tal {
+  text-align: left;
+}
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+/* clear float */
+.clf::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 隐藏滚动条 */
+.no-scroll-bar {
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+}
+
+/* 居中 */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* margin padding */
+@for $i from 0 through 100 {
+  .w#{$i} {
+    width: $i * 1%;
+  }
+  .m#{$i} {
+    margin: $i * 1px; /* no */
+  }
+  .ml#{$i} {
+    margin-left: $i * 1px; /* no */
+  }
+  .mr#{$i} {
+    margin-right: $i * 1px; /* no */
+  }
+  .mt#{$i} {
+    margin-top: $i * 1px; /* no */
+  }
+  .mb#{$i} {
+    margin-bottom: $i * 1px; /* no */
+  }
+  .p#{$i} {
+    padding: $i * 1px; /* no */
+  }
+  .pl#{$i} {
+    padding-left: $i * 1px; /* no */
+  }
+  .pr#{$i} {
+    padding-right: $i * 1px; /* no */
+  }
+  .pt#{$i} {
+    padding-top: $i * 1px; /* no */
+  }
+  .pb#{$i} {
+    padding-bottom: $i * 1px; /* no */
+  }
+}
+
+// 一个表示加载中的简单小动画，3个点依次显示
+.dota {
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  text-align: left;
+  vertical-align: -0.25em;
+  overflow: hidden;
+}
+.dota::before {
+  display: block;
+  content: '...\A..\A.';
+  white-space: pre-wrap; /* 也可以是white-space: pre */
+  animation: dot 3s infinite step-start both;
+}
+@keyframes dot {
+  33% {
+    transform: translateY(-2em);
+  }
+  66% {
+    transform: translateY(-1em);
+  }
+}
+
+.breadcrumb-container {
+  height: $breadcrumb-height;
+  padding-left: 14px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .link {
+    cursor: pointer;
+  }
+}
+.filter {
+  margin: 0 $padding-main;
+  min-height: $filer-height;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #f6f6f6;
+  // .l{
+
+  // }
+  .r {
+    margin: 5px;
+  }
+  .filter-input {
+    width: 180px;
+    margin: 5px 0;
+  }
+  .filter-select {
+    width: 180px;
+    margin: 5px 0;
+  }
+}
+.main-body {
+  padding-left: $padding-main;
+  padding-right: $padding-main;
+  margin-top: 15px;
+}
+.paging-container {
+  height: $paging-height;
+  overflow: hidden;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
+.white-background {
+  background: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+body {
+  font-size: 14px;
+}
+.text-btn {
+  color: $color-main;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.ant-table-expanded-row {
+  background: rgb(249, 249, 249) !important;
+  td {
+    padding: 16px 10px !important;
+  }
+}
+
+.fullFill {
+  width: 100% !important;
+}
+
+#viewOrEdit {
+  .ant-input-disabled {
+    color: #000;
+    background: transparent;
+    border: none;
+    cursor: text;
+    + .anticon-calendar {
+      display: none;
+    }
+    .ant-cascader-picker-label {
+      color: #000;
+    }
+  }
+
+  .ant-cascader-picker-disabled {
+    background: #fff;
+    cursor: text;
+    .ant-cascader-picker-label {
+      color: #000;
+    }
+    .anticon-down {
+      display: none;
+    }
+  }
+
+  .ant-select-disabled {
+    .ant-select-selection-selected-value,
+    .ant-select-selection {
+      border: none;
+      background: #fff;
+      cursor: text;
+      color: #000;
+    }
+    .anticon-down {
+      display: none;
+    }
+  }
+
+  .ant-input-number-disabled {
+    border: none;
+    background: #fff;
+    color: #000;
+    .ant-input-number-input {
+      cursor: text;
+    }
+  }
+}
+
+.noPickTime {
+  .ant-calendar-footer {
+    display: none;
+  }
+}
+
+.noPickNow {
+  .ant-calendar-footer {
+    .ant-calendar-today-btn,
+    .ant-calendar-ok-btn {
+      display: none;
+    }
+  }
+}
+
+.w180 {
+  width: 180px;
+}
+
+.w250 {
+  width: 250px;
+}
+
+.w200 {
+  width: 200px;
+}
+
+.lh80 {
+  line-height: 80px;
+}

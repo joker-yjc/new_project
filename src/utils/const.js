@@ -1,12 +1,7 @@
 import { Mscf } from 'nearby-common'
+const PROJECT_CONFIG = require('../../projectConfig')
 
-export const mscf = new Mscf({
-  role: 'child',
-  token: 'nearby',
-  name: 'channelData'
-})
-
-export let BASE_URL = 'https://oas.lianlianlvyou.com'
+export let BASE_URL = PROJECT_CONFIG.apiBaseUrl
 // 网关
 let commonApiBaseUrl = BASE_URL
 
@@ -31,3 +26,9 @@ export const commonUploadImgUrl = commonApiBaseUrl + '/common/file/uploadFile'
 export const getMyselfCityUrl = commonApiBaseUrl + '/common/location/getSingleList'
 // 获取全部站点
 export const getAllCityUrl = commonApiBaseUrl + '/common/location/getAllList'
+
+export const mscf = new Mscf({
+  role: 'child',
+  token: 'nearby',
+  name: PROJECT_CONFIG.projectName
+})
