@@ -9,7 +9,7 @@
 // use in this file only
 $paging-height-int: 55;
 $breadcrumb-height: 50px; // 面包屑高度
-$filer-height: 80px; // 筛选器高度
+$filer-height: 40px; // 筛选器高度
 $paging-height: $paging-height-int + 0px; // 分页器高度
 
 :export {
@@ -299,6 +299,6 @@ body {
   width: 200px;
 }
 
-.lh80 {
-  line-height: 80px;
+.lh100 {
+  line-height: $filer-height;
 }
