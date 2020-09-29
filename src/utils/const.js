@@ -1,7 +1,6 @@
 import { Mscf } from 'nearby-common'
-const PROJECT_CONFIG = require('../../projectConfig')
 
-export let BASE_URL = PROJECT_CONFIG.apiBaseUrl
+export let BASE_URL = process.env.VUE_APP_APIBASEURL
 // 网关
 let commonApiBaseUrl = BASE_URL
 
@@ -30,5 +29,5 @@ export const getAllCityUrl = commonApiBaseUrl + '/common/location/getAllList'
 export const mscf = new Mscf({
   role: 'child',
   token: 'nearby',
-  name: PROJECT_CONFIG.projectName
+  name: process.env.VUE_APP_PROJECTNAME
 })

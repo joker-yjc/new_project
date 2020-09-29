@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-05-27 10:40:13
- * @LastEditors: joker_yjc
- * @LastEditTime: 2020-09-26 15:54:27
+ * @LastEditors  : joker_yjc
+ * @LastEditTime : 2020-09-29 10:47:12
  * @Desciption: 
 -->
 <template>
@@ -16,7 +16,6 @@
   </div>
 </template>
 <script>
-const moduleName = require('../../projectConfig').moduleName
 export default {
   name: 'breadNav',
   props: {
@@ -25,7 +24,7 @@ export default {
     },
     moduleName: {
       type: String,
-      default: moduleName
+      default: process.env.VUE_APP_MODULENAME
     }
   }
 }

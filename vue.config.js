@@ -1,17 +1,11 @@
-// const PROJECT_CONFIG = require('./projectConfig')
 const path = require('path')
 module.exports = {
-  // publicPath: PROJECT_CONFIG.projectName,
-  // chainWebpack: config => {
-  //   config.module
-  //     .rule('eslint')
-  //     .use('eslint-loader')
-  //     .loader('eslint-loader')
-  //     .tap(options => {
-  //       options.fix = true
-  //       return options
-  //     })
-  // },
+  chainWebpack: (config) => {
+    config.plugin('html').tap((args) => {
+      args[0].title = process.env.VUE_APP_MODULENAME
+      return args
+    })
+  },
   configureWebpack: {
     module: {
       rules: [

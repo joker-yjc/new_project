@@ -1,36 +1,36 @@
 # new_project
 
 ## Project setup
+
 ```
-yarn install
+yarn/npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn run serve
+yarn/npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
-yarn run build
+yarn/npm run build
 ```
 
 ### Lints and fixes files
+
 ```
-yarn run lint
+yarn/npm run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 #### 注意事项
 
-1. 页面布局可以用 flex，不兼容 IE，但是注意兼容小屏幕，如笔记本。
-2. 面包屑应正确反映页面层次，可点击的面包屑应有蓝色标识，鼠标放上去有手形。
-3. 关键错误应有捕获和异常上报。
-4. 搜索需要把搜索条件放进 url,这样返回的时候就可以拿到原来的搜索条件。
-5. 如果取消按钮和其他主要按钮放一起，那么取消按钮在左边，其他按钮在右边
-6. `projectConfig.js`里面有系统注册名称需要修改成自己的应用名称
+1. .env 文件里面有系统注册名称需要修改成自己的应用名称
 
 ### 样式规范
 
