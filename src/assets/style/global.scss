@@ -15,9 +15,7 @@ $paging-height: $paging-height-int + 0px; // 分页器高度
 :export {
   pagingHeight: $paging-height-int;
 }
-html::-webkit-scrollbar {
-  display: none;
-}
+
 /* 分离样式 */
 /* display */
 .dn {
