@@ -4,7 +4,7 @@
       <p v-for="item in menus" :key="item.path">
         <router-link :to="item.path">{{ item.name }}</router-link>
       </p>
-      12
+      页面结构信息
     </div>
   </div>
 </template>
