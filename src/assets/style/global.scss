@@ -143,8 +143,9 @@ $paging-height: $paging-height-int + 0px; // 分页器高度
   align-items: flex-start;
   justify-content: space-between;
   background-color: #f6f6f6;
+  .l,
   .r {
-    margin: 5px;
+    margin: 10px 5px 5px;
   }
   .filter-input {
     width: 180px;

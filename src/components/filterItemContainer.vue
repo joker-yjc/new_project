@@ -6,7 +6,8 @@
 <style lang="scss" scoped>
 .filter-item-container {
   display: inline-block;
-  margin: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 </style>
 <script>
