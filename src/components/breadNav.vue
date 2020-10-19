@@ -24,7 +24,7 @@ export default {
     },
     moduleName: {
       type: String,
-      default: process.env.VUE_APP_MODULENAME
+      default: process.env.VUE_APP_moduleName
     }
   }
 }

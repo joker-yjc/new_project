@@ -1,10 +1,10 @@
 const path = require('path')
 module.exports = {
-  publicPath: `/${process.env.VUE_APP_PROJECTNAME}`,
-  outputDir: path.join(__dirname, 'dist', process.env.VUE_APP_PROJECTNAME),
+  publicPath: `/${process.env.VUE_APP_projectName}`,
+  outputDir: path.join(__dirname, 'dist', process.env.VUE_APP_projectName),
   chainWebpack: (config) => {
     config.plugin('html').tap((args) => {
-      args[0].title = process.env.VUE_APP_MODULENAME
+      args[0].title = process.env.VUE_APP_moduleName
       return args
     })
   },

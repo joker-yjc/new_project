@@ -1,13 +1,8 @@
 import { Mscf } from 'nearby-common'
 
-export let BASE_URL = process.env.VUE_APP_APIBASEURL
+export let BASE_URL = process.env.VUE_APP_apiBaseUrl
 // 网关
-let commonApiBaseUrl = BASE_URL
-
-if (process.env.NODE_ENV !== 'production') {
-  BASE_URL = process.env.NODE_ENV === 'development' ? 'http://192.168.10.124:32011' : 'http://192.168.10.124:32011'
-  commonApiBaseUrl = process.env.NODE_ENV === 'development' ? 'http://192.168.10.124:32011' : 'http://192.168.10.124:32011'
-}
+let commonApiBaseUrl = process.env.VUE_APP_VUE_APP_commonBaseUrl || process.env.VUE_APP_APIBASEURL
 
 // 获取产品经理
 export const getAllProductUrl = commonApiBaseUrl + '/common/positionUserSearch/getAllProductBranchAndGroup'
@@ -29,5 +24,5 @@ export const getAllCityUrl = commonApiBaseUrl + '/common/location/getAllList'
 export const mscf = new Mscf({
   role: 'child',
   token: 'nearby',
-  name: process.env.VUE_APP_PROJECTNAME
+  name: process.env.VUE_APP_projectName
 })
