@@ -143,8 +143,9 @@ $paging-height: $paging-height-int + 0px; // 分页器高度
   align-items: flex-start;
   justify-content: space-between;
   background-color: #f6f6f6;
+  .l,
   .r {
-    margin: 5px;
+    margin: 10px 10px 0;
   }
   .filter-input {
     width: 180px;
@@ -155,6 +156,13 @@ $paging-height: $paging-height-int + 0px; // 分页器高度
     margin: 5px 0;
   }
 }
+
+@for $i from 100 through 300 {
+  .w#{$i} {
+    width: $i * 1px;
+  }
+}
+
 .main-body {
   padding-left: $padding-main;
   padding-right: $padding-main;
@@ -179,6 +187,7 @@ $paging-height: $paging-height-int + 0px; // 分页器高度
 body {
   font-size: 14px;
 }
+
 .text-btn {
   color: $color-main;
   cursor: pointer;
@@ -244,18 +253,6 @@ body {
   }
 }
 
-.w180 {
-  width: 180px;
-}
-
-.w250 {
-  width: 250px;
-}
-
-.w200 {
-  width: 200px;
-}
-
-.lh100 {
+.lhfh {
   line-height: $filer-height;
 }

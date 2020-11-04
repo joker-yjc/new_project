@@ -1,8 +1,11 @@
 import { getQueryString } from 'nearby-common'
 
+// 获取token
 export function getToken() {
-  return process.env.NODE_ENV === 'development' ? 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2Jhc2VfaWQiOiI0ODN8MTYwMDgyNjEwMDE2NSJ9.b0Eb-OrYZb2d_XOYrk6575OjioXdkksm-GZCtZ5j6zY' : getQueryString('token')
+  return process.env.NODE_ENV === 'development' ? process.env.VUE_APP_token : getQueryString('token')
 }
+
+// 判断是否被嵌入在iframe中
 export function isInFrame() {
   return window.self !== window.top
 }
