@@ -31,7 +31,7 @@ export default {
     }
   },
   created() {
-    console.log(process.env)
+    // console.log(process.env)
   },
   methods: {
     changeLoading(flag = { status: false, tip: '数据加载中...' }) {

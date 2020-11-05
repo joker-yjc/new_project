@@ -11,7 +11,7 @@ export function isInFrame() {
 }
 
 // 接受文件流并下载
-export function getExcel(name, blobObj) {
+export function download(name, blobObj) {
   var elink = document.createElement('a')
   elink.download = name
   elink.style.display = 'none'

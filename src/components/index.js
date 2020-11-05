@@ -5,5 +5,8 @@ files.keys().forEach((key) => {
   if (key.match(/index\.js/)) {
     return
   }
-  Vue.component(files(key).default.name, files(key).default)
+  let componentName = files(key).default.name
+  if (componentName) {
+    Vue.component(componentName, files(key).default)
+  }
 })
