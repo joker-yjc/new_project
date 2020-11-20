@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-  publicPath: `/${process.env.VUE_APP_projectName}`,
+  publicPath: process.env.NODE_ENV === 'development' ? `/${process.env.VUE_APP_projectName}` : `./`,
   outputDir: path.join(__dirname, 'dist', process.env.VUE_APP_projectName),
   chainWebpack: (config) => {
     config.plugin('html').tap((args) => {
